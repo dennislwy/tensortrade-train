@@ -7,7 +7,7 @@ call venv\Scripts\activate.bat
 IF %ERRORLEVEL% NEQ 0 GOTO END
 echo.
 
-echo [1m...Installing 'requirements.txt'[0m
+echo [1m...Installing 'requirements.no-gpu.txt'[0m
 pip install -r requirements.no-gpu.txt
 IF %ERRORLEVEL% NEQ 0 GOTO END 
 echo.

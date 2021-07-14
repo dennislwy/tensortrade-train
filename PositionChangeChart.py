@@ -42,7 +42,7 @@ class PositionChangeChart(Renderer):
         axs[0].set_title("Trading Chart")
 
         performance_df = pd.DataFrame().from_dict(env.action_scheme.portfolio.performance, orient='index')
-        performance_df.drop(['bitfinex:/USD-TTC',axis=1, inplace=True])
+        performance_df.drop(['bitfinex:/USD-TTC'], axis=1, inplace=True)
         performance_df.plot(ax=axs[1])
         axs[1].set_title("Net Worth")
 
