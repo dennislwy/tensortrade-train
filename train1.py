@@ -11,7 +11,7 @@ from tensortrade.oms.instruments import Instrument, USD, BTC
 from tensortrade.oms.wallets import Wallet, Portfolio
 from tensortrade.env.default.renderers import PlotlyTradingChart, FileLogger
 import tensortrade.env.default as default
-from tensortrade.agents import DQNAgent
+from tensortrade.agents import DQNAgent, ParallelDQNAgent, A2CAgent
 
 import matplotlib.pyplot as plt
 
@@ -205,7 +205,7 @@ if __name__ == '__main__':
     )
 
     # setup agent
-    n_episodes = 10
+    n_episodes = 4
     n_steps = total_data_steps
     render_interval = 100
 
@@ -215,7 +215,7 @@ if __name__ == '__main__':
     # Set render_interval to None to render at episode ends only
     agent.train(n_episodes=n_episodes, n_steps=n_steps, render_interval=render_interval)
 
-    # plot result
+    # plot performance
     performance = pd.DataFrame.from_dict(env.action_scheme.portfolio.performance, orient='index')
     performance.drop(['bitfinex:/USD-TTC'], axis=1, inplace=True)
     show_performance(performance, df)
@@ -223,6 +223,6 @@ if __name__ == '__main__':
     # output summary
     net_worth = performance.net_worth[len(performance.net_worth) - 1]
     print(f"Net worth = {net_worth} USD")
-
     pnl = 100 * (net_worth / initial_capital - 1)
     print(f"P&L = {pnl} %")
+
