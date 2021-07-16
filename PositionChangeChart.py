@@ -46,4 +46,6 @@ class PositionChangeChart(Renderer):
         performance_df.plot(ax=axs[1])
         axs[1].set_title("Net Worth")
 
+        performance_df.net_worth.plot(ax=axs[0], secondary_y=True, grid=True, legend=True)
+
         plt.show()
