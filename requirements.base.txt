@@ -10,5 +10,5 @@ plotly>=4.5.0
 sympy>=1.4
 ccxt>=1.18.1220
 jupyterlab>=1.1.4
-tensortrade
+git+https://github.com/tensortrade-org/tensortrade.git
 ta
