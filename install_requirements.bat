@@ -7,8 +7,8 @@ call venv\Scripts\activate.bat
 IF %ERRORLEVEL% NEQ 0 GOTO END
 echo.
 
-echo [1m...Installing 'requirements.no-gpu.txt'[0m
-pip install -r requirements.no-gpu.txt
+echo [1m...Installing 'requirements.ray.no-gpu.txt'[0m
+pip install -r requirements.ray.no-gpu.txt
 IF %ERRORLEVEL% NEQ 0 GOTO END 
 echo.
 

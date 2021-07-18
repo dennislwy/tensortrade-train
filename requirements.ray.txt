@@ -1,8 +1,9 @@
 -r requirements.txt
-torch==1.6.0
-dm-tree
 ray==0.8.7
 ray[tune]==0.8.7
 ray[rllib]==0.8.7
 symfit
+lz4
+dm-tree
+torch==1.6
 
