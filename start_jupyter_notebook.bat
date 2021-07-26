@@ -13,7 +13,7 @@ IF NOT EXIST "%~dp0venv\Scripts\jupyter-notebook.exe" (
     IF %ERRORLEVEL% NEQ 0 GOTO END
 )
 echo ...Starting Jupyter Notebook
-jupyter notebook
+"%~dp0venv\Scripts\jupyter.exe" notebook
 IF %ERRORLEVEL% NEQ 0 GOTO END
 echo.
 

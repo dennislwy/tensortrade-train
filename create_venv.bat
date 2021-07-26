@@ -2,10 +2,10 @@
 pushd %~dp0
 setlocal
 
-set python_path=%ProgramFiles%\Python37\python.exe
+set python_path=%ProgramFiles%\Python38\python.exe
 
 IF NOT EXIST "%python_path%" (
-    echo [101;93mPython 3.7 not found![0m
+    echo [101;93mPython 3.8 not found![0m
     goto END
 )
 
